@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
     <script src="https://telegram.org/js/telegram-web-app.js" defer></script>
     <link rel="stylesheet" href="style.css">
+    <script src='//whephiwums.com/sdk.js' data-zone='9181429' data-sdk='show_9181429'></script>
 </head>
 <body>
     <!-- Loading Screen -->
@@ -58,5 +59,19 @@
     </div>
     
     <script src="script.js"></script>
+
+    <script>
+        show_9181429({ 
+          type: 'inApp', 
+          inAppSettings: { 
+            frequency: 10, 
+            capping: 0.02, 
+            interval: 10, 
+            timeout: 5, 
+            everyPage: false 
+          } 
+        })
+    </script>
+    
 </body>
 </html>
