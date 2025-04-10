@@ -134,6 +134,15 @@ function handleTask(taskId) {
     
     // Check if this is a restart attempt
     const isRestart = task.status === 'failed';
+    
+    // Try to open the link in a new window, but continue even if blocked
+    try {
+        window.open(task.link, '_blank');
+    } catch (e) {
+        console.log('Please complete the task properly!');
+    }
+    
+    // No longer checking if window opened successfully - continue with task
 
     isTaskInProgress = true;
     task.status = 'verifying';
