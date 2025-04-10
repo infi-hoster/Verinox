@@ -135,30 +135,44 @@ function handleTask(taskId) {
     // Check if this is a restart attempt
     const isRestart = task.status === 'failed';
     
-    // Try to open the link in a new window, but continue even if blocked
-    try {
-        window.open(task.link, '_blank');
-    } catch (e) {
-        console.log('Please complete the task properly!');
-    }
+    const newWindow = window.open(task.link, '_blank');
     
-    // No longer checking if window opened successfully - continue with task
+    if (!newWindow) {
+        alert('Please enable pop-ups to initiate this task.');
+        return;
+    }
 
     isTaskInProgress = true;
     task.status = 'verifying';
     saveState();
     renderTasks();
 
-    // Simulate verification process with a random time between 40-50 seconds
-    const verificationTime = Math.floor(Math.random() * (50000 - 40000 + 1)) + 40000;
+    let userClosedTime = null;
+    const startTime = Date.now();
+    
+    const popupCheck = setInterval(() => {
+        if (newWindow.closed || !newWindow.document) {
+            userClosedTime = Date.now();
+            clearInterval(popupCheck);
+        }
+    }, 500);
+    const verificationTime = Math.floor(Math.random() * (55000 - 40000 + 1)) + 40000;
 
     setTimeout(() => {
+        clearInterval(popupCheck);
         isTaskInProgress = false;
         
-        // Determine task success based only on tier rate or restart bonus
-        // If this is a restart attempt, give 80% chance of success
-        const successRate = isRestart ? 0.8 : userTier.rate;
-        task.status = Math.random() < successRate ? 'completed' : 'failed';
+        const actualStayTime = userClosedTime 
+            ? userClosedTime - startTime 
+            : verificationTime;
+
+        if (actualStayTime < 35000) {
+            task.status = 'failed';
+        } else {
+            // If this is a restart attempt, give 80% chance of success
+            const successRate = isRestart ? 0.8 : userTier.rate;
+            task.status = Math.random() < successRate ? 'completed' : 'failed';
+        }
         
         saveState();
         renderTasks();
