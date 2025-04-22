@@ -11,37 +11,37 @@ const TIERS = [
 const initialTasks = [
     { 
         id: 1, 
-        name: "Complete Human Verification", 
+        name: "Complete Human Verification",
         points: 5000, 
         link: "https://t.me/TapCoinsBot/app?startapp=ref_n2kxMG-page_bioMatrixScan", 
         status: "pending" 
     },
     { 
         id: 2, 
-        name: "Join Channel and Spin 3 Times", 
+        name: "Sign-Up & stay 4 Minutes",
         points: 4500, 
-        link: "https://t.me/LuckyDrawMasterBot/app?startapp=Y2g9a1FqOXh2SFI3RyZnPXNwJmw9a1FqOXh2SFI3RyZzbz1TaGFyZSZ1PTc0NzYyMjYyMzg=", 
+        link: "https://www.profitableratecpm.com/t31x63kmv7?key=c8d95d994fff4b591da8b84825ee1326", 
         status: "pending" 
     },
     { 
         id: 3,
-        name: "Join Channel and Claim Bonus", 
+        name: "Sign-Up and Visit 10 Pages",
         points: 4000, 
-        link: "https://t.me/GoosChainBot?start=4587865544", 
+        link: "https://www.profitableratecpm.com/t31x63kmv7?key=c8d95d994fff4b591da8b84825ee1326", 
         status: "pending" 
     },
     { 
         id: 4, 
-        name: "Start Mining and Utilize It", 
+        name: "Start Mining and Utilize It",
         points: 3500, 
-        link: "https://t.me/GenkiMinerBot/GenkiMiner?startapp=T9qRvb49", 
+        link: "https://t.me/GenkiMinerBot/GenkiMiner?startapp=T9qRvb49",
         status: "pending" 
     },
     { 
         id: 5, 
-        name: "Perticipate in Daily Events", 
+        name: "Create Account & Stay 5 Minutes",
         points: 3000, 
-        link: "https://t.me/sprizebot/app?startapp=invite_7523668946", 
+        link: "https://www.profitableratecpm.com/t31x63kmv7?key=c8d95d994fff4b591da8b84825ee1326", 
         status: "pending" 
     }
 ];
